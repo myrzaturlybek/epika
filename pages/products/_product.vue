@@ -1,0 +1,198 @@
+<template>
+  <div class="w-full bg-light py-20 font-serif">
+    <div class="container mx-auto px-4">
+      <h2 class="text-center text-h2 font-bold mb-8 text-gray py-24">
+        {{ this.products[this.product].title }}
+      </h2>
+      <div
+        data-aos="fade-down"
+        data-aos-duration="2000"
+        class="flex flex-wrap -mx-4 overflow-hidden"
+      >
+        <div
+          v-for="product in products[this.product].items"
+          :key="product.id"
+          class="my-4 px-4 w-full md:w-1/2 lg:w-1/3 relative"
+        >
+          <div class="product w-full overflow-hidden">
+            <img class="w-full" :src="'http://epika.com.tr' + product.url" />
+            <div
+              class="
+                block
+                w-full
+                h-full
+                absolute
+                bg-clip-content bg-orange-800
+                px-4
+                inset-0
+                hidden
+                product-hover
+              "
+            >
+              <a to="#" class="w-full h-full flex justify-center items-center">
+                <div
+                  class="
+                    px-4
+                    py-3
+                    border-2 border-white
+                    text-white text-body
+                    font-semibold font-sans
+                  "
+                >
+                  {{ product.text }}
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  async asyncData({ params }) {
+    const product = params.product;
+    const products = {
+      "sofa-sets": {
+        title: "Диванные комплекты",
+        items: [
+          { url: "/resim/upload/7125c.jpg", text: "20-06 ARTE" },
+          { url: "/resim/upload/7126a.jpg", text: "20-08 ARTE 1" },
+          { url: "/resim/upload/7127a.jpg", text: "20-10 ARTE 2" },
+          { url: "/resim/upload/7128a.jpg", text: "20-12 ELİT 1" },
+          { url: "/resim/upload/7129b.jpg", text: "20-14 ELİT" },
+          { url: "/resim/upload/7130a.jpg", text: "20-16 ANGELO" },
+          { url: "/resim/upload/7131a.jpg", text: "20-18 ANİMA 2" },
+          { url: "/resim/upload/7132a.jpg", text: "20-20 ANİMA" },
+          { url: "/resim/upload/7133b.jpg", text: "20-22 FARFELLA" },
+          { url: "/resim/upload/7134a.jpg", text: "20-24 FARFELLA 1" },
+          { url: "/resim/upload/7135b.jpg", text: "20-26 SEDEF" },
+          { url: "/resim/upload/7136a.jpg", text: "20-28 SEDEF GOLD" },
+          { url: "/resim/upload/7137a.jpg", text: "20-30 SEDEF GOLD 2" },
+          { url: "/resim/upload/7138a.jpg", text: "20-32 HAZAL" },
+          { url: "/resim/upload/7139c.jpg", text: "20-34 HAZAL 1" },
+          { url: "/resim/upload/7140a.jpg", text: "20-36 EPİKA" },
+          { url: "/resim/upload/7141a.jpg", text: "20-38 EPİKA 1" },
+          { url: "/resim/upload/7142a.jpg", text: "20-40 İNSETTO METAL " },
+          { url: "/resim/upload/7143b.jpg", text: "20-42 İNSETTO" },
+          { url: "/resim/upload/7144d.jpg", text: "20-44 MARTE 1" },
+          { url: "/resim/upload/7145a.jpg", text: "20-46 SUDE" },
+          { url: "/resim/upload/7146a.jpg", text: "20-48 YAKAMOZ" },
+          { url: "/resim/upload/7147a.jpg", text: "20-50 AMORE" },
+          { url: "/resim/upload/7148b.jpg", text: "20-52 İNCİ" },
+          { url: "/resim/upload/7149a.jpg", text: "20-54 ELİPSO" },
+          { url: "/resim/upload/7150a.jpg", text: "20-56 ELİPSO 1" },
+          { url: "/resim/upload/7151a.jpg", text: "20-58 ORKİDE GÜMÜŞ" },
+          { url: "/resim/upload/7152a.jpg", text: "20-60  ORKİDE SİYAH " },
+          { url: "/resim/upload/7153b.jpg", text: "20-62 CLASS" },
+          { url: "/resim/upload/7154a.jpg", text: "20-64 MODERNO" },
+          { url: "/resim/upload/7155a.jpg", text: "20-70 MARE" },
+          { url: "/resim/upload/7156a.jpg", text: "20-66 MODERNO 2" },
+          { url: "/resim/upload/7157a.jpg", text: "20-72 LUNA" },
+          { url: "/resim/upload/7158a.jpg", text: "20-68 MODERNO 1" },
+        ],
+      },
+      "corner-sets": {
+        title: "Угловые комплекты",
+        items: [
+          { url: "/resim/upload/7159b.jpg", text: "20-76 ANİMA KÖŞE" },
+          { url: "/resim/upload/7160a.jpg", text: "20-78 MODERNO " },
+          { url: "/resim/upload/7161a.jpg", text: "20-80 MARE" },
+          { url: "/resim/upload/7162a.jpg", text: "20-82 İNCİ" },
+          { url: "/resim/upload/7163b.jpg", text: "20-84 ESTATE" },
+          { url: "/resim/upload/7164a.jpg", text: "20-86 AMORE 1" },
+          { url: "/resim/upload/7165b.jpg", text: "20-88 AMORE" },
+          { url: "/resim/upload/7166a.jpg", text: "20-90 GİGLİO" },
+          { url: "/resim/upload/7167a.jpg", text: "20-92 NAPOLİ" },
+        ],
+      },
+      sofas: {
+        title: "Диваны",
+        items: [
+          { url: "/resim/upload/7178a.jpg", text: "FERMO" },
+          { url: "/resim/upload/7179a.jpg", text: "FRENZE KANEPE" },
+          { url: "/resim/upload/7180a.jpg", text: "MİZRON KANEPE" },
+          { url: "/resim/upload/7181a.jpg", text: "NAPOLİ İKİLİ" },
+          { url: "/resim/upload/7182a.jpg", text: "NAPOLİ TEKLİ" },
+          { url: "/resim/upload/7183a.jpg", text: "MAXİ NAPOLİ " },
+          { url: "/resim/upload/7184a.jpg", text: "NERO KANEPE" },
+          { url: "/resim/upload/7185a.jpg", text: "RELAX 140'LIK" },
+          { url: "/resim/upload/7186a.jpg", text: "RELAX MİNİ" },
+        ],
+      },
+      bergers: {
+        title: "Кресла",
+        items: [
+          { url: "/resim/upload/7103a.png", text: "MARTE" },
+          { url: "/resim/upload/7102a.png", text: "EPİKA" },
+          { url: "/resim/upload/7101a.png", text: "İNSETTO" },
+          { url: "/resim/upload/7100a.png", text: "FARFELLA" },
+          { url: "/resim/upload/7099a.png", text: "FİRUZE" },
+          { url: "/resim/upload/7098a.png", text: "MİMOZA" },
+          { url: "/resim/upload/7097a.png", text: "MONZA" },
+          { url: "/resim/upload/7096a.png", text: "NOTTE" },
+          { url: "/resim/upload/7095a.png", text: "ROSA" },
+          { url: "/resim/upload/7094a.png", text: "VERDE" },
+          { url: "/resim/upload/7093a.png", text: "AMBER" },
+          { url: "/resim/upload/7092a.png", text: "AMORE" },
+          { url: "/resim/upload/7091a.jpg", text: "FAVORİ" },
+          { url: "/resim/upload/7090a.png", text: "İNCİ" },
+          { url: "/resim/upload/7089a.png", text: "KLAS" },
+          { url: "/resim/upload/7088a.png", text: "MANOLYA" },
+          { url: "/resim/upload/7087a.jpg", text: "MARE" },
+          { url: "/resim/upload/7086a.png", text: "ORKİDE" },
+          { url: "/resim/upload/7085a.png", text: "SOLİDO" },
+          { url: "/resim/upload/7084a.png", text: "SUDE" },
+          { url: "/resim/upload/7083a.png", text: "YAKAMOZ" },
+          { url: "/resim/upload/7082a.png", text: "YAKUT" },
+        ],
+      },
+      beds: {
+        title: "Кровати",
+        items: [
+          { url: "/resim/upload/7081a.jpg", text: "BAMBOO COMFORT" },
+          { url: "/resim/upload/7080a.jpg", text: "COMFORT" },
+          { url: "/resim/upload/7079a.jpg", text: "ORGANIC COTTON" },
+          { url: "/resim/upload/7078a.jpg", text: "RELAX PED " },
+          { url: "/resim/upload/7077a.jpg", text: "SİESTA" },
+          { url: "/resim/upload/7076a.jpg", text: "VISCO" },
+        ],
+      },
+      "coffee-tables": {
+        title: "Журнальные столики",
+        items: [
+          { url: "/resim/upload/7075a.jpg", text: "AMBER EPİKA/ALTIN" },
+          { url: "/resim/upload/7073a.jpg", text: "KLAS EPİKA" },
+          { url: "/resim/upload/7072a.jpg", text: "KLAS EPİKA/ALTIN" },
+          { url: "/resim/upload/7071a.jpg", text: "ORKİDE EPİKA/ALTIN" },
+          { url: "/resim/upload/7070a.jpg", text: "ORKİDE GÜMÜŞ" },
+          { url: "/resim/upload/7069a.jpg", text: "ORKİDE KREM/ALTIN" },
+          { url: "/resim/upload/7068a.jpg", text: "ORKİDE SİYAH/ALTIN" },
+          { url: "/resim/upload/7067a.jpg", text: "SUDE EPİKA" },
+          { url: "/resim/upload/7066a.jpg", text: "SUDE SİYAH/ALTIN" },
+          { url: "/resim/upload/7065a.jpg", text: "YAKAMOZ" },
+          { url: "/resim/upload/7168a.jpg", text: "AMORE EPİKA" },
+          { url: "/resim/upload/7169a.jpg", text: "EPİKA" },
+          { url: "/resim/upload/7170a.jpg", text: "İNSETTO SİYAH" },
+          { url: "/resim/upload/7171a.jpg", text: "KLASS GOLD" },
+          { url: "/resim/upload/7172a.jpg", text: "LUNA ALTIN" },
+          { url: "/resim/upload/7173a.jpg", text: "MARE SİYAH" },
+          { url: "/resim/upload/7174a.jpg", text: "ORKİDE GÜMÜŞ" },
+          { url: "/resim/upload/7175a.jpg", text: "SEDEF ALTIN" },
+          { url: "/resim/upload/7176a.jpg", text: "SEDEF KROM" },
+          { url: "/resim/upload/7177a.jpg", text: "YAKAMOZ SİYAH ALTIN" },
+        ],
+      },
+    };
+    return { product, products };
+  },
+};
+</script>
+
+<style scoped>
+.product:hover .product-hover {
+  display: block;
+}
+</style>
