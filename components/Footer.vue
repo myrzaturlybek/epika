@@ -94,17 +94,17 @@ export default {
     return {
       products: [
         {
-          img: "http://epika.com.tr//resim/upload/7128a.jpg",
+          img: "7128a.jpg",
           title: "Диванные комплекты",
           link: "/products/sofa-sets",
         },
         {
-          img: "http://epika.com.tr/resim/upload/7164a.jpg",
+          img: "7164a.jpg",
           title: "Угловые комплекты",
           link: "/products/corner-sets",
         },
         {
-          img: "http://epika.com.tr/resim/upload/7179a.jpg",
+          img: "7179a.jpg",
           title: "Диваны",
           link: "/products/sofas",
         },

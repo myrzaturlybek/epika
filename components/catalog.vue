@@ -13,16 +13,35 @@
           class="my-4 px-4 w-full md:w-1/2 lg:w-1/3 relative"
         >
           <div class="product w-full overflow-hidden">
-            <img class="w-full" :src="product.img" />
+            <img
+              class="w-full"
+              :src="require(`~/assets/upload/${product.img}`)"
+            />
             <div
-              class="block w-full h-full absolute bg-clip-content bg-orange-800 px-4 inset-0 hidden product-hover"
+              class="
+                block
+                w-full
+                h-full
+                absolute
+                bg-clip-content bg-orange-800
+                px-4
+                inset-0
+                hidden
+                product-hover
+              "
             >
               <nuxt-link
                 :to="product.link"
                 class="w-full h-full flex justify-center items-center"
               >
                 <div
-                  class="px-4 py-3 border-2 border-white text-white text-body font-semibold font-sans"
+                  class="
+                    px-4
+                    py-3
+                    border-2 border-white
+                    text-white text-body
+                    font-semibold font-sans
+                  "
                 >
                   {{ product.title }}
                 </div>
@@ -41,32 +60,32 @@ export default {
     return {
       products: [
         {
-          img: "http://epika.com.tr//resim/upload/7128a.jpg",
+          img: "7128a.jpg",
           title: "Диванные комплекты",
           link: "/products/sofa-sets",
         },
         {
-          img: "http://epika.com.tr/resim/upload/7164a.jpg",
+          img: "7164a.jpg",
           title: "Угловые комплекты",
           link: "/products/corner-sets",
         },
         {
-          img: "http://epika.com.tr/resim/upload/7179a.jpg",
+          img: "7179a.jpg",
           title: "Диваны",
           link: "/products/sofas",
         },
         {
-          img: "http://epika.com.tr/images/intearch/services/services4.jpg",
+          img: "7091a.jpg",
           title: "Кресла",
           link: "/products/bergers",
         },
         {
-          img: "http://epika.com.tr/images/intearch/services/services5.jpg",
+          img: "7081a.jpg",
           title: "Кровати",
           link: "/products/beds",
         },
         {
-          img: "http://epika.com.tr/images/intearch/services/services6.jpg",
+          img: "7075a.jpg",
           title: "Журнальные столики",
           link: "/products/coffee-tables",
         },

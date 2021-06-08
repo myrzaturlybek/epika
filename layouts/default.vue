@@ -18,6 +18,6 @@ export default {
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Playfair+Display:wght@400;700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Playfair+Display:wght@400;700&display=swap"); */
 </style>

@@ -14,7 +14,16 @@ export default {
       {
         rel: "icon",
         type: "image/x-icon",
-        href: "http://epika.com.tr/resim/upload/7001.png"
+        href: "/favicon.ico"
+      },
+      {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com"
+      },
+      {
+        rel: "stylesheet",
+        href:
+          "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
       }
     ]
   },
